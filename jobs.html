@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worldwide Job Explorer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    
+    <style>
+        :root {
+            --color-bg-deep: #0C0A1E; 
+            --color-card-bg: #1F1D36; 
+            --color-accent-cyan: #06B6D4; 
+            --color-accent-indigo: #6366F1;
+        }
+
+        .bg-deep { background-color: var(--color-bg-deep); }
+        .bg-card { background-color: var(--color-card-bg); }
+        .text-cyan-accent { color: var(--color-accent-cyan); }
+        .text-indigo-accent { color: var(--color-accent-indigo); }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animated-element {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-500 { animation-delay: 0.5s; }
+        .delay-600 { animation-delay: 0.6s; }
+
+        .gradient-text {
+            background-image: linear-gradient(to right, var(--color-accent-indigo), var(--color-accent-cyan));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .apply-button {
+            background-image: linear-gradient(to right, var(--color-accent-indigo), var(--color-accent-cyan));
+            color: white;
+            padding: 0.65rem 1.5rem;
+            border-radius: 9999px; 
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(99, 102, 241, 0.4); 
+        }
+        .apply-button:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(6, 182, 212, 0.6);
+        }
+
+        .footer-marquee {
+            padding: 1rem 0;
+            font-size: 0.875rem;
+            color: #9ca3af;
+            background-color: #050414;
+            border-top: 1px solid var(--color-card-bg);
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body class="bg-deep text-white min-h-screen flex flex-col font-sans">
+    
+    <div class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8">
+        <header class="header mb-12">
+            <div class="flex justify-between items-center animated-element">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold gradient-text tracking-tight">
+                    Worldwide Job Explorer
+                </h1>
+                <a href="login.html" class="p-3 rounded-full bg-card hover:bg-opacity-80 transition duration-300 transform hover:scale-105" title="Login/Profile">
+                    <i class="bi bi-person-fill text-xl text-cyan-accent"></i>
+                </a>
+            </div>
+            <hr class="border-t border-card my-4 animated-element delay-100">
+            <p class="text-lg text-gray-400 animated-element delay-200">
+                Find job across the globe that match your skills and interests.
+            </p>
+        </header>
+
+        <div id="job-dashboard" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            
+            
+            <div class="job-card bg-card p-6 rounded-xl shadow-2xl hover:shadow-cyan-accent/20 transition-all duration-300 border border-transparent hover:border-cyan-accent/50 animated-element" data-delay="300">
+                <h2 class="text-2xl font-bold mb-2 text-cyan-accent">Software Engineer</h2>
+                <p class="text-sm text-gray-400 flex items-center mb-1"><i class="bi bi-geo-alt-fill mr-2 text-indigo-accent"></i> Location: <span class="ml-1 text-white font-medium">San Francisco, CA</span></p>
+                <p class="text-sm text-gray-400 flex items-center mb-2"><i class="bi bi-building-fill mr-2 text-indigo-accent"></i> Company: <span class="ml-1 text-white font-medium">Tech Innovators Inc.</span></p>
+                <p class="text-lg font-semibold text-white mb-4"><i class="bi bi-currency-dollar mr-1 text-cyan-accent"></i> $120,000 - $150,000</p>
+                <button class="apply-button w-full">Apply Now</button>
+            </div>
+
+            <div class="job-card bg-card p-6 rounded-xl shadow-2xl hover:shadow-cyan-accent/20 transition-all duration-300 border border-transparent hover:border-cyan-accent/50 animated-element" data-delay="400">
+                <h2 class="text-2xl font-bold mb-2 text-cyan-accent">Data Scientist</h2>
+                <p class="text-sm text-gray-400 flex items-center mb-1"><i class="bi bi-geo-alt-fill mr-2 text-indigo-accent"></i> Location: <span class="ml-1 text-white font-medium">New York, NY</span></p>
+                <p class="text-sm text-gray-400 flex items-center mb-2"><i class="bi bi-building-fill mr-2 text-indigo-accent"></i> Company: <span class="ml-1 text-white font-medium">Data Solutions Ltd.</span></p>
+                <p class="text-lg font-semibold text-white mb-4"><i class="bi bi-currency-dollar mr-1 text-cyan-accent"></i> $110,000 - $140,000</p>
+                <button class="apply-button w-full">Apply Now</button>
+            </div>
+
+            <div class="job-card bg-card p-6 rounded-xl shadow-2xl hover:shadow-cyan-accent/20 transition-all duration-300 border border-transparent hover:border-cyan-accent/50 animated-element" data-delay="500">
+                <h2 class="text-2xl font-bold mb-2 text-cyan-accent">Product Manager</h2>
+                <p class="text-sm text-gray-400 flex items-center mb-1"><i class="bi bi-geo-alt-fill mr-2 text-indigo-accent"></i> Location: <span class="ml-1 text-white font-medium">Austin, TX</span></p>
+                <p class="text-sm text-gray-400 flex items-center mb-2"><i class="bi bi-building-fill mr-2 text-indigo-accent"></i> Company: <span class="ml-1 text-white font-medium">Product Masters Co.</span></p>
+                <p class="text-lg font-semibold text-white mb-4"><i class="bi bi-currency-dollar mr-1 text-cyan-accent"></i> $130,000 - $160,000</p>
+                <button class="apply-button w-full">Apply Now</button>
+            </div>
+
+            <div class="job-card bg-card p-6 rounded-xl shadow-2xl hover:shadow-cyan-accent/20 transition-all duration-300 border border-transparent hover:border-cyan-accent/50 animated-element" data-delay="600">
+                <h2 class="text-2xl font-bold mb-2 text-cyan-accent">UX/UI Designer</h2>
+                <p class="text-sm text-gray-400 flex items-center mb-1"><i class="bi bi-geo-alt-fill mr-2 text-indigo-accent"></i> Location: <span class="ml-1 text-white font-medium">Seattle, WA</span></p>
+                <p class="text-sm text-gray-400 flex items-center mb-2"><i class="bi bi-building-fill mr-2 text-indigo-accent"></i> Company: <span class="ml-1 text-white font-medium">Creative Designs LLC</span></p>
+                <p class="text-lg font-semibold text-white mb-4"><i class="bi bi-currency-dollar mr-1 text-cyan-accent"></i> $90,000 - $120,000</p>
+                <button class="apply-button w-full">Apply Now</button>
+            </div>
+            
+            <div class="job-card bg-card p-6 rounded-xl shadow-2xl hover:shadow-cyan-accent/20 transition-all duration-300 border border-transparent hover:border-cyan-accent/50 animated-element" data-delay="300">
+                <h2 class="text-2xl font-bold mb-2 text-cyan-accent">DevOps Engineer</h2>
+                <p class="text-sm text-gray-400 flex items-center mb-1"><i class="bi bi-geo-alt-fill mr-2 text-indigo-accent"></i> Location: <span class="ml-1 text-white font-medium">Boston, MA</span></p>
+                <p class="text-sm text-gray-400 flex items-center mb-2"><i class="bi bi-building-fill mr-2 text-indigo-accent"></i> Company: <span class="ml-1 text-white font-medium">Cloud Solutions Corp.</span></p>
+                <p class="text-lg font-semibold text-white mb-4"><i class="bi bi-currency-dollar mr-1 text-cyan-accent"></i> $115,000 - $145,000</p>
+                <button class="apply-button w-full">Apply Now</button>
+            </div>
+
+            <div class="job-card bg-card p-6 rounded-xl shadow-2xl hover:shadow-cyan-accent/20 transition-all duration-300 border border-transparent hover:border-cyan-accent/50 animated-element" data-delay="400">
+                <h2 class="text-2xl font-bold mb-2 text-cyan-accent">Marketing Specialist</h2>
+                <p class="text-sm text-gray-400 flex items-center mb-1"><i class="bi bi-geo-alt-fill mr-2 text-indigo-accent"></i> Location: <span class="ml-1 text-white font-medium">Chicago, IL</span></p>
+                <p class="text-sm text-gray-400 flex items-center mb-2"><i class="bi bi-building-fill mr-2 text-indigo-accent"></i> Company: <span class="ml-1 text-white font-medium">Marketing Gurus Inc.</span></p>
+                <p class="text-lg font-semibold text-white mb-4"><i class="bi bi-currency-dollar mr-1 text-cyan-accent"></i> $80,000 - $100,000</p>
+                <button class="apply-button w-full">Apply Now</button>
+            </div>
+            
+            <div class="job-card bg-card p-6 rounded-xl shadow-2xl hover:shadow-cyan-accent/20 transition-all duration-300 border border-transparent hover:border-cyan-accent/50 animated-element" data-delay="500">
+                <h2 class="text-2xl font-bold mb-2 text-cyan-accent">Cybersecurity Analyst</h2>
+                <p class="text-sm text-gray-400 flex items-center mb-1"><i class="bi bi-geo-alt-fill mr-2 text-indigo-accent"></i> Location: <span class="ml-1 text-white font-medium">Washington, D.C.</span></p>
+                <p class="text-sm text-gray-400 flex items-center mb-2"><i class="bi bi-building-fill mr-2 text-indigo-accent"></i> Company: <span class="ml-1 text-white font-medium">SecureTech Solutions</span></p>
+                <p class="text-lg font-semibold text-white mb-4"><i class="bi bi-currency-dollar mr-1 text-cyan-accent"></i> $100,000 - $130,000</p>
+                <button class="apply-button w-full">Apply Now</button>
+            </div>
+            
+            <div class="job-card bg-card p-6 rounded-xl shadow-2xl hover:shadow-cyan-accent/20 transition-all duration-300 border border-transparent hover:border-cyan-accent/50 animated-element" data-delay="600">
+                <h2 class="text-2xl font-bold mb-2 text-cyan-accent">Full Stack Developer</h2>
+                <p class="text-sm text-gray-400 flex items-center mb-1"><i class="bi bi-geo-alt-fill mr-2 text-indigo-accent"></i> Location: <span class="ml-1 text-white font-medium">Los Angeles, CA</span></p>
+                <p class="text-sm text-gray-400 flex items-center mb-2"><i class="bi bi-building-fill mr-2 text-indigo-accent"></i> Company: <span class="ml-1 text-white font-medium">Web Innovators Ltd.</span></p>
+                <p class="text-lg font-semibold text-white mb-4"><i class="bi bi-currency-dollar mr-1 text-cyan-accent"></i> $120,000 - $150,000</p>
+                <button class="apply-button w-full">Apply Now</button>
+            </div>
+            
+            <div class="job-card bg-card p-6 rounded-xl shadow-2xl hover:shadow-cyan-accent/20 transition-all duration-300 border border-transparent hover:border-cyan-accent/50 animated-element" data-delay="300">
+                <h2 class="text-2xl font-bold mb-2 text-cyan-accent">Business Analyst</h2>
+                <p class="text-sm text-gray-400 flex items-center mb-1"><i class="bi bi-geo-alt-fill mr-2 text-indigo-accent"></i> Location: <span class="ml-1 text-white font-medium">Miami, FL</span></p>
+                <p class="text-sm text-gray-400 flex items-center mb-2"><i class="bi bi-building-fill mr-2 text-indigo-accent"></i> Company: <span class="ml-1 text-white font-medium">Business Insights Co.</span></p>
+                <p class="text-lg font-semibold text-white mb-4"><i class="bi bi-currency-dollar mr-1 text-cyan-accent"></i> $90,000 - $120,000</p>
+                <button class="apply-button w-full">Apply Now</button>
+            </div>
+            
+            <div class="job-card bg-card p-6 rounded-xl shadow-2xl hover:shadow-cyan-accent/20 transition-all duration-300 border border-transparent hover:border-cyan-accent/50 animated-element" data-delay="400">
+                <h2 class="text-2xl font-bold mb-2 text-cyan-accent">Network Engineer</h2>
+                <p class="text-sm text-gray-400 flex items-center mb-1"><i class="bi bi-geo-alt-fill mr-2 text-indigo-accent"></i> Location: <span class="ml-1 text-white font-medium">Denver, CO</span></p>
+                <p class="text-sm text-gray-400 flex items-center mb-2"><i class="bi bi-building-fill mr-2 text-indigo-accent"></i> Company: <span class="ml-1 text-white font-medium">Network Solutions Inc.</span></p>
+                <p class="text-lg font-semibold text-white mb-4"><i class="bi bi-currency-dollar mr-1 text-cyan-accent"></i> $95,000 - $125,000</p>
+                <button class="apply-button w-full">Apply Now</button>
+            </div>
+            
+            <div class="job-card bg-card p-6 rounded-xl shadow-2xl hover:shadow-cyan-accent/20 transition-all duration-300 border border-transparent hover:border-cyan-accent/50 animated-element" data-delay="500">
+                <h2 class="text-2xl font-bold mb-2 text-cyan-accent">Content Writer</h2>
+                <p class="text-sm text-gray-400 flex items-center mb-1"><i class="bi bi-geo-alt-fill mr-2 text-indigo-accent"></i> Location: <span class="ml-1 text-white font-medium">Atlanta, GA</span></p>
+                <p class="text-sm text-gray-400 flex items-center mb-2"><i class="bi bi-building-fill mr-2 text-indigo-accent"></i> Company: <span class="ml-1 text-white font-medium">Content Creators LLC</span></p>
+                <p class="text-lg font-semibold text-white mb-4"><i class="bi bi-currency-dollar mr-1 text-cyan-accent"></i> $70,000 - $90,000</p>
+                <button class="apply-button w-full">Apply Now</button>
+            </div>
+
+            <div class="job-card bg-card p-6 rounded-xl shadow-2xl hover:shadow-cyan-accent/20 transition-all duration-300 border border-transparent hover:border-cyan-accent/50 animated-element" data-delay="600">
+                <h2 class="text-2xl font-bold mb-2 text-cyan-accent">Cloud Architect</h2>
+                <p class="text-sm text-gray-400 flex items-center mb-1"><i class="bi bi-geo-alt-fill mr-2 text-indigo-accent"></i> Location: <span class="ml-1 text-white font-medium">Phoenix, AZ</span></p>
+                <p class="text-sm text-gray-400 flex items-center mb-2"><i class="bi bi-building-fill mr-2 text-indigo-accent"></i> Company: <span class="ml-1 text-white font-medium">Cloud Innovators Corp.</span></p>
+                <p class="text-lg font-semibold text-white mb-4"><i class="bi bi-currency-dollar mr-1 text-cyan-accent"></i> $130,000 - $160,000</p>
+                <button class="apply-button w-full">Apply Now</button>
+            </div>
+            
+            <div class="job-card bg-card p-6 rounded-xl shadow-2xl hover:shadow-cyan-accent/20 transition-all duration-300 border border-transparent hover:border-cyan-accent/50 animated-element" data-delay="300">
+                <h2 class="text-2xl font-bold mb-2 text-cyan-accent">Sales Executive</h2>
+                <p class="text-sm text-gray-400 flex items-center mb-1"><i class="bi bi-geo-alt-fill mr-2 text-indigo-accent"></i> Location: <span class="ml-1 text-white font-medium">Dallas, TX</span></p>
+                <p class="text-sm text-gray-400 flex items-center mb-2"><i class="bi bi-building-fill mr-2 text-indigo-accent"></i> Company: <span class="ml-1 text-white font-medium">Sales Leaders Inc.</span></p>
+                <p class="text-lg font-semibold text-white mb-4"><i class="bi bi-currency-dollar mr-1 text-cyan-accent"></i> $80,000 - $110,000</p>
+                <button class="apply-button w-full">Apply Now</button>
+            </div>
+            
+            <div class="job-card bg-card p-6 rounded-xl shadow-2xl hover:shadow-cyan-accent/20 transition-all duration-300 border border-transparent hover:border-cyan-accent/50 animated-element" data-delay="400">
+                <h2 class="text-2xl font-bold mb-2 text-cyan-accent">Graphic Designer</h2>
+                <p class="text-sm text-gray-400 flex items-center mb-1"><i class="bi bi-geo-alt-fill mr-2 text-indigo-accent"></i> Location: <span class="ml-1 text-white font-medium">San Diego, CA</span></p>
+                <p class="text-sm text-gray-400 flex items-center mb-2"><i class="bi bi-building-fill mr-2 text-indigo-accent"></i> Company: <span class="ml-1 text-white font-medium">Design Studio Ltd.</span></p>
+                <p class="text-lg font-semibold text-white mb-4"><i class="bi bi-currency-dollar mr-1 text-cyan-accent"></i> $75,000 - $95,000</p>
+                <button class="apply-button w-full">Apply Now</button>
+            </div>
+
+            <div class="job-card bg-card p-6 rounded-xl shadow-2xl hover:shadow-cyan-accent/20 transition-all duration-300 border border-transparent hover:border-cyan-accent/50 animated-element" data-delay="500">
+                <h2 class="text-2xl font-bold mb-2 text-cyan-accent">Database Administrator</h2>
+                <p class="text-sm text-gray-400 flex items-center mb-1"><i class="bi bi-geo-alt-fill mr-2 text-indigo-accent"></i> Location: <span class="ml-1 text-white font-medium">Philadelphia, PA</span></p>
+                <p class="text-sm text-gray-400 flex items-center mb-2"><i class="bi bi-building-fill mr-2 text-indigo-accent"></i> Company: <span class="ml-1 text-white font-medium">Data Management Inc.</span></p>
+                <p class="text-lg font-semibold text-white mb-4"><i class="bi bi-currency-dollar mr-1 text-cyan-accent"></i> $100,000 - $130,000</p>
+                <button class="apply-button w-full">Apply Now</button>
+            </div>
+            
+            <div class="job-card bg-card p-6 rounded-xl shadow-2xl hover:shadow-cyan-accent/20 transition-all duration-300 border border-transparent hover:border-cyan-accent/50 animated-element" data-delay="600">
+                <h2 class="text-2xl font-bold mb-2 text-cyan-accent">AI Research Scientist</h2>
+                <p class="text-sm text-gray-400 flex items-center mb-1"><i class="bi bi-geo-alt-fill mr-2 text-indigo-accent"></i> Location: <span class="ml-1 text-white font-medium">Toronto, Canada</span></p>
+                <p class="text-sm text-gray-400 flex items-center mb-2"><i class="bi bi-building-fill mr-2 text-indigo-accent"></i> Company: <span class="ml-1 text-white font-medium">AI Innovations Ltd.</span></p>
+                <p class="text-lg font-semibold text-white mb-4"><i class="bi bi-currency-dollar mr-1 text-cyan-accent"></i> $140,000 - $180,000</p>
+                <button class="apply-button w-full">Apply Now</button>
+            </div>
+            
+            <div class="job-card bg-card p-6 rounded-xl shadow-2xl hover:shadow-cyan-accent/20 transition-all duration-300 border border-transparent hover:border-cyan-accent/50 animated-element" data-delay="300">
+                <h2 class="text-2xl font-bold mb-2 text-cyan-accent">Blockchain Developer</h2>
+                <p class="text-sm text-gray-400 flex items-center mb-1"><i class="bi bi-geo-alt-fill mr-2 text-indigo-accent"></i> Location: <span class="ml-1 text-white font-medium">London, UK</span></p>
+                <p class="text-sm text-gray-400 flex items-center mb-2"><i class="bi bi-building-fill mr-2 text-indigo-accent"></i> Company: <span class="ml-1 text-white font-medium">Blockchain Solutions Inc.</span></p>
+                <p class="text-lg font-semibold text-white mb-4"><i class="bi bi-currency-dollar mr-1 text-cyan-accent"></i> $130,000 - $160,000</p>
+                <button class="apply-button w-full">Apply Now</button>
+            </div>
+
+            <div class="job-card bg-card p-6 rounded-xl shadow-2xl hover:shadow-cyan-accent/20 transition-all duration-300 border border-transparent hover:border-cyan-accent/50 animated-element" data-delay="400">
+                <h2 class="text-2xl font-bold mb-2 text-cyan-accent">SEO Specialist</h2>
+                <p class="text-sm text-gray-400 flex items-center mb-1"><i class="bi bi-geo-alt-fill mr-2 text-indigo-accent"></i> Location: <span class="ml-1 text-white font-medium">Sydney, Australia</span></p>
+                <p class="text-sm text-gray-400 flex items-center mb-2"><i class="bi bi-building-fill mr-2 text-indigo-accent"></i> Company: <span class="ml-1 text-white font-medium">Digital Marketing Co.</span></p>
+                <p class="text-lg font-semibold text-white mb-4"><i class="bi bi-currency-dollar mr-1 text-cyan-accent"></i> $85,000 - $110,000</p>
+                <button class="apply-button w-full">Apply Now</button>
+            </div>
+            
+            <div class="job-card bg-card p-6 rounded-xl shadow-2xl hover:shadow-cyan-accent/20 transition-all duration-300 border border-transparent hover:border-cyan-accent/50 animated-element" data-delay="500">
+                <h2 class="text-2xl font-bold mb-2 text-cyan-accent">Mobile App Developer</h2>
+                <p class="text-sm text-gray-400 flex items-center mb-1"><i class="bi bi-geo-alt-fill mr-2 text-indigo-accent"></i> Location: <span class="ml-1 text-white font-medium">Berlin, Germany</span></p>
+                <p class="text-sm text-gray-400 flex items-center mb-2"><i class="bi bi-building-fill mr-2 text-indigo-accent"></i> Company: <span class="ml-1 text-white font-medium">App Creators Ltd.</span></p>
+                <p class="text-lg font-semibold text-white mb-4"><i class="bi bi-currency-dollar mr-1 text-cyan-accent"></i> $120,000 - $150,000</p>
+                <button class="apply-button w-full">Apply Now</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="mt-auto footer-marquee text-center">
+        <marquee behavior="scroll" direction="left" scrollamount="12">
+            © All Rights Reserved @ 2025 Jobtech Ventures Private Limited. | Explore your dream job today! | Worldwide opportunities await.
+        </marquee>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const applyStaggeredAnimation = () => {
+                const elements = document.querySelectorAll('.job-card.animated-element');
+                
+                let baseDelay = 300; 
+                if(elements.length > 0) {
+                    baseDelay = parseInt(elements[0].getAttribute('data-delay')) || 300;
+                }
+
+                elements.forEach((el, index) => {
+                    const delayMs = baseDelay + (index * 100);
+                    
+                    const staggerDelay = (index % 4) * 100; 
+                    
+                    el.style.animationDelay = `${staggerDelay + 300}ms`;
+                    el.removeAttribute('data-delay'); 
+                });
+            };
+
+            applyStaggeredAnimation();
+            
+            document.querySelectorAll('.apply-button').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const jobTitle = e.target.closest('.job-card').querySelector('h2').textContent;
+                    const messageContainer = document.createElement('div');
+                    messageContainer.className = 'fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70 backdrop-blur-sm';
+                    messageContainer.innerHTML = `
+                        <div class="bg-card p-8 rounded-xl shadow-2xl border border-cyan-accent max-w-sm w-full text-center transform scale-100 transition-all duration-300">
+                            <i class="bi bi-check-circle-fill text-4xl text-cyan-accent mb-3"></i>
+                            <h3 class="text-xl font-bold mb-2">Application Acknowledged</h3>
+                            <p class="text-gray-300">Your application for the position of <span class="text-cyan-accent font-medium">${jobTitle}</span> has been noted. Please check your email for next steps!</p>
+                            <button onclick="this.closest('.fixed').remove()" class="apply-button mt-5 mx-auto">Close</button>
+                        </div>
+                    `;
+                    document.body.appendChild(messageContainer);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
